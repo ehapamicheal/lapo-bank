@@ -1,4 +1,3 @@
-import './card-request.css';
 import Header from "../../components/Header";
 import { MdOutlineCreditScore } from "react-icons/md";
 
