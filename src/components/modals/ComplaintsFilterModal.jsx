@@ -10,7 +10,7 @@ const ComplaintsFilterModal = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/50" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/50">
       <div className="bg-white rounded py-6 w-full max-w-md">
         <div className="flex justify-between items-center px-4 mb-4 pb-3 border-b border-b-gray-300">
             <div className="flex items-center gap-x-3">

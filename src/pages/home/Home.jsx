@@ -15,6 +15,18 @@ import { HiOutlineHome } from "react-icons/hi";
 
 const Home = ({onToggleSidebar}) => {
 
+    const now = new Date();
+
+    // Format for "Last login"
+    const loginDate = now.toLocaleDateString('en-GB');
+    const loginTime = now.toLocaleTimeString('en-GB');
+
+    const todaysDate = now.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+    }); 
+
     return (
         <>
             <main className="bg-main-color">
@@ -26,20 +38,29 @@ const Home = ({onToggleSidebar}) => {
                 </Header>
 
                 <section className="w-full mt-10 pb-3 pl-3 pr-3 xl:pl-9 xl:pr-4 pt-9 ml-0 xl:ml-[230px] xl:w-[calc(100%-230px)]">
+
                     <div className="flex justify-between gap-x-3">
-                        <div className="">
-                            <h3 className="text-base sm:text-lg font-bold text-text-color">Hi Nazeer, what would you like to do today?</h3>
-                            <p className="text-[13px] text-text-color font-medium">Last login: <span className="font-light text-xs">26/11/2024</span>  <span className="font-light text-xs">14:39:58</span></p>
+                        <div>
+                            <h3 className="text-base sm:text-lg font-bold text-text-color">
+                            Hi Nazeer, what would you like to do today?
+                            </h3>
+                            <p className="text-[13px] text-text-color font-medium">
+                            Last login:{' '}
+                            <span className="font-light text-xs">{loginDate}</span>{' '}
+                            <span className="font-light text-xs">{loginTime}</span>
+                            </p>
                         </div>
 
                         <div className="flex flex-col items-center py-2 px-3 sm:gap-x-3 sm:flex-row border border-link-text rounded-lg">
                             <div className="flex items-center gap-x-1">
-                                <MdOutlineCalendarToday className="text-sm sm:text-[15px]" />
-                                <p className="text-text-color font-medium text-sm sm:text-[15px]">Today</p>
+                            <MdOutlineCalendarToday className="text-sm sm:text-[15px]" />
+                            <p className="text-text-color font-medium text-sm sm:text-[15px]">Today</p>
                             </div>
 
                             <div className="border-t border-t-link-text pt-2 sm:border-t-0 sm:pt-0 mt-2 sm:mt-0 sm:border-l sm:border-l-link-text sm:pl-3">
-                                <p className="text-text-color font-light text-xs sm:text-sm">11 Nov 2024</p>
+                            <p className="text-text-color font-light text-xs sm:text-sm">
+                                {todaysDate}
+                            </p>
                             </div>
                         </div>
                     </div>
